@@ -1,0 +1,143 @@
+
+
+i.fa-user {
+	color: #777777;
+    position: absolute;
+    top: 15px;
+    left: -6em;
+}
+
+
+.text {
+	position: relative;
+	min-height: 60px;
+	width: 60%;
+	margin: 0px auto;
+	background-color: #fff;
+}
+
+.result-messages {
+
+	overflow: scroll;
+	width: 100%;
+	height: 400px;
+	background-color: #F3F3F3;
+	
+
+}
+.sidebar {
+	
+	width: 100%;
+	height: 400px;
+	background-color: #F3F3F3;
+	
+}
+.container {
+	width: 1280px !important;
+}
+
+.comments {
+		  width: 400px;
+		  position: relative;
+		  float: left;
+		  left: 6em;
+ }
+
+  .comment {
+		  width: 100%;
+		  margin-bottom: -18px;
+		  margin-top: 30px;
+
+		  }
+ small {
+ 	float: right;
+ 	color: #828488;
+ }
+
+ .comment p {
+		  margin: 0 0 0px 0;
+  }
+
+  .dialog {
+		  position: relative;
+		  background: #fff;
+		  padding: 20px;
+		  color: #222;
+		  border-radius: 2px;
+		  margin-left: 20px;
+  }
+.dialog:hover {
+	background-color: #ADC4C8;
+
+}
+
+  .dialog::after {
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  width: 0;
+		  height: 0;
+		  border-top: 8px solid transparent;
+		  border-bottom: 8px solid transparent;
+		  border-right: 15px solid #fff;
+		  left: -15px;
+		  top: 15px;
+  }
+
+   .dialog:hover::after {
+  	border-right: 15px solid #ADC4C8;
+  }
+#mark {
+	float: right;
+}
+#send {
+	margin: 10px 0px 10px 3px;
+    width: 313px;
+    height: 22px;
+}
+.sidebar-right-wrapper {
+	width: 100%;
+	height: 400px;
+	background-color: #F3F3F3;
+	overflow: scroll;
+	
+}
+.col {
+	box-shadow: 0px 0px 0px 1px #D0CACA;
+}
+.wrapper-field {
+	margin-left: 10px;
+}
+.fixed {
+	background-color: #F3F3F3;
+}
+.text-area {
+	width: 200px;
+	height: 30px;
+	margin-top: 10px;
+}
+.alert-success, .alert-danger {
+	display: none;
+}
+
+.delete {
+	border: none;
+	background-color: transparent;
+	outline: none;
+	color: #BCBCBC;
+}
+.mess {
+	position: absolute;
+	top: -3px;
+	right: 2px;
+}
+.list {
+	position: relative;
+        float: right;
+        bottom: 33px;
+        right: 5px;
+}
+
+.delete:hover {
+        color: red;
+}
