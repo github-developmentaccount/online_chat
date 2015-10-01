@@ -4,8 +4,7 @@
   <div class="navbar-inner">
     <a class="brand" href="#">Online Chat</a>
     <ul class="nav">
-      <li><a href="#myModal" role="button" data-toggle="modal">Log in</a></li>
-      <li><a href="#">Sign in</a></li>
+      
       <li></li>
     </ul>
     </div>

@@ -6,7 +6,7 @@
   <div class="navbar-inner">
     <a class="brand" href="#">Online Chat</a>
     <ul class="nav">
-      <li><a href="?pc=true" role="button" data-toggle="modal">Item</a></li>
+      
       <li class="dropdown" id="drop-list">
       	<a href="#" id="drop1" role="button" class="dropdown-toggle" data-toggle="dropdown">My rooms
 			<b class="caret"></b>
