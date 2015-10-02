@@ -141,7 +141,7 @@ $(document).ready(function () {
 		                          
 		                                if(data == 0 || data == '') 
 		                                    {
-                                                     alert(data);
+                                                    
 		                                      $('.alert-danger').fadeIn('slow').html('Process failed').fadeOut('slow');
 		                                      return false;
                                                     }
