@@ -73,8 +73,6 @@ var func = function () {
                                     return false;
                                     
                                 case '2':
-                                    
-                                    $('.alert-success').fadeIn('slow').html('Channel is empty, type your message').fadeOut('slow');
                                     return false;
                                 
                                 default:
