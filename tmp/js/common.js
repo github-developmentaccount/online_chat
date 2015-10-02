@@ -1,4 +1,4 @@
-    /*
+/*
      * 
      * @param {type} key
      * @returns {$_GET.s|Boolean}
@@ -66,36 +66,39 @@ var func = function () {
 			url: url,
 			success: function (data) {
                             
-                            if(data == 0) {
-                                $('.alert-danger').fadeIn('slow').html('Chosen channel doesn\'t exist or your permission denied by owner privacy').fadeOut('slow');
-                                return false;
-                            } 
-                            
-                            
-                               if(identifier != 'admin') {   
+                            switch(data) {
+                                case 0:
                                     
-                                    $.each($.parseJSON(data), function (key, value) {
-                                    result += '<div class="comments" id="' +value.uid + '"><div class="comment dialog"><i class="fa fa-user">&nbsp;' + value.login + '</i><p>' + value.text + '</p><small><i class="fa fa-calendar-o"></i>&nbsp;' + value.time + '</small></div></div>';
-
-
-                                        });
+                                    $('.alert-danger').fadeIn('slow').html('Chosen channel doesn\'t exist or your permission denied by owner privacy').fadeOut('slow');
+                                    return false;
+                                    
+                                case '2':
+                                    
+                                    $('.alert-success').fadeIn('slow').html('Channel is empty, type your message').fadeOut('slow');
+                                    return false;
+                                
+                                default:
+                                    if(identifier != 'admin') {
+                                        $.each($.parseJSON(data), function (key, value) {
+                                        result += '<div class="comments" id="' +value.uid + '"><div class="comment dialog"><i class="fa fa-user">&nbsp;' + value.login + '</i><p>' + value.text + '</p><small><i class="fa fa-calendar-o"></i>&nbsp;' + value.time + '</small></div></div>';
+                                     });
                                     }
-                                    
-                                        else if(identifier == 'admin' && $_GET('ch') != false)
-                                        {
-                                            $.each($.parseJSON(data), function (key, value) {
+                                    else if(identifier == 'admin' && $_GET('ch') != false){
+                                        
+                                        $.each($.parseJSON(data), function (key, value) {
                                             result += '<div class="comments" id="' +value.uid + '"><div class="comment dialog"><i class="fa fa-user">&nbsp;' + value.login + '</i><p>' + value.text + '</p><small><i class="fa fa-calendar-o"></i>&nbsp;' + value.time + '</small>'+ '<a class="delete mess" href="?delete='+ value.m_id +'"><i class="fa fa-times"></i></a></div></div>';
                                         });
-                                        }
-                                        else {   
-                                    
-                                            $.each($.parseJSON(data), function (key, value) {
-                                            result += '<div class="comments" id="' +value.uid + '"><div class="comment dialog"><i class="fa fa-user">&nbsp;' + value.login + '</i><p>' + value.text + '</p><small><i class="fa fa-calendar-o"></i>&nbsp;' + value.time + '</small></div></div>';
-
-
-                                                });
-                                            }
+                                    }
+                                    else {
                                         
+                                        $.each($.parseJSON(data), function (key, value) {
+                                            result += '<div class="comments" id="' +value.uid + '"><div class="comment dialog"><i class="fa fa-user">&nbsp;' + value.login + '</i><p>' + value.text + '</p><small><i class="fa fa-calendar-o"></i>&nbsp;' + value.time + '</small></div></div>';
+                                                });
+
+                                                
+                                    }
+                            }
+                              
                         $('#wrapper-mess').empty().append(result);
                     
 		}
@@ -323,6 +326,7 @@ $(function () {
                     return false;
                 }
                 $('.alert-success').html('Message has been deleted').fadeIn('slow').fadeOut('slow');
+               //window.location.reload('index.php?ch=1');
                 func();
                 
             }
@@ -333,4 +337,3 @@ $(function () {
 
 
 });
-

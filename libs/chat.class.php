@@ -112,6 +112,7 @@ class Chat
 							ORDER by id DESC
                                                         LIMIT 10';
 		$result = $this->_db->query($_sql, PDO::FETCH_ASSOC);
+                if($result->rowCount() > 0){
 		foreach($result as $row)
 				{
 					
@@ -122,7 +123,10 @@ class Chat
                                                       'ch_id'=>$row['ch_id'],
                                                       'm_id' => $row['id']];
 				}
+                                
 				return json_encode($output);
+                }
+                else return 2;
 
 				
 
